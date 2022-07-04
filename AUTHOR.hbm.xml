@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="PBD_KR2" assembly="PBD_KR2">
+	<class name="Authors" table="AUTHOR">
+		<id name="Gid" column="Gid">
+			<generator class="identity"/>
+		</id>
+		<property name="LastName" column="LastName" />
+		<property name="FirstName" column="FirstName" />
+		<set name="Graphs" inverse="true">
+			<key column="AuthorGid"/>
+			<one-to-many class="Graphs"/>
+		</set>
+	</class>
+</hibernate-mapping>
